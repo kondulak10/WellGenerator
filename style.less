@@ -1,10 +1,29 @@
 .app {
     font-size: 12px;
-    table {
-        thead {
-            tr:nth-child(1) {
-                font-weight: bold;
+    width: 100%;
+    float: left;
+    ._wellConfig {
+      margin: 0 0 40px 0;
+        table {
+            thead {
+                tr:nth-child(1) {
+                    font-weight: bold;
+                }
+            }
+            tbody {
+                input {
+                    width: 80px;
+                }
             }
         }
+        .generate {
+            margin: 20px;
+        }
+        .smaller {
+            font-size: 11px;
+        }
     }
+    ._wellConfig:nth-child(even) table {
+      background-color: rgb(241,241,241);
+  }
 }

@@ -1,6 +1,23 @@
 .app {
   font-size: 12px;
+  width: 100%;
+  float: left;
 }
-.app table thead tr:nth-child(1) {
+.app ._wellConfig {
+  margin: 0 0 40px 0;
+}
+.app ._wellConfig table thead tr:nth-child(1) {
   font-weight: bold;
+}
+.app ._wellConfig table tbody input {
+  width: 80px;
+}
+.app ._wellConfig .generate {
+  margin: 20px;
+}
+.app ._wellConfig .smaller {
+  font-size: 11px;
+}
+.app ._wellConfig:nth-child(even) table {
+  background-color: #f1f1f1;
 }
