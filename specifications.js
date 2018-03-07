@@ -392,7 +392,7 @@ function generateTables() {
       <tbody>
       </tbody>
     </table>
-    <div class="btn btn-default _addRow">
+    <div class="btn btn-primary _addRow">
       Add row
     </div>
     <div class="btn btn-default _removeRow">

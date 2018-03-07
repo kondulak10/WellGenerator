@@ -1,5 +1,6 @@
 function generateFinalString() {
   var finalString = "";
+  finalString += "--" + $("#description").val() + "\r\n\r\n";
   //WELL SPECS
   for (let spec of specs) {
     //start specs
