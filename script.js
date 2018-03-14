@@ -16,6 +16,11 @@ $(() => {
     $("._controlRows").hide();
     $("thead").hide();
   }
+
+  //prevent refresh
+  window.onbeforeunload = function () {
+    return "Are you sure you want to refresh? You will lose all unsaved data";
+  }
 });
 
 function generateRow(idP, $tbody, values) { //values if should be filled
@@ -37,10 +42,20 @@ function generateRow(idP, $tbody, values) { //values if should be filled
 
         //add value if any
         if (values && values[i] && values[i] !== "undefined") {
-          $input.find("input").val(values[i]);
+          $input.find("input").attr("value", values[i]);
         }
       }
     }
+  }
+}
+
+function generateCopiedRow(id, $tbody) {
+  var $previousRow = $tbody.find("tr:last-child")[0]
+  if ($previousRow) {
+    $tbody.append("<tr>" + $previousRow.innerHTML + "</tr>");
+  }
+  else {
+    generateRow(id, $tbody);
   }
 }
 
@@ -55,6 +70,14 @@ function generateButtons() {
     var $tbody = $("#" + id).find("tbody");
     generateRow(id, $tbody);
   })
+
+  $("._addCopiedRow").on("click", (event) => {
+    var id = $(event.target).parent().parent().attr("id");
+    //var fields = $("#"+id).find("thead tr:nth-child(1) td").length;
+    var $tbody = $("#" + id).find("tbody");
+    generateCopiedRow(id, $tbody);
+  })
+
   $("._removeRow").on("click", (event) => {
     var id = $(event.target).parent().parent().attr("id");
     var $tbody = $("#" + id).find("tbody");

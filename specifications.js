@@ -380,6 +380,9 @@ function generateTables() {
   <div class="_wellConfig" id="`+ cur.key + `">
     <h3>`+ cur.title + `</h3>
     <div class="_controlRows">
+      <div class="btn btn-primary _addCopiedRow btn-mini">
+        Add copied row
+      </div>
       <div class="btn btn-primary _addRow btn-mini">
         Add row
       </div>
