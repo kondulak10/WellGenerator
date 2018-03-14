@@ -134,7 +134,7 @@ var specs = [
       {
         title: "Direction well penetrates the block",
         desc: "",
-        type: "Number",
+        type: "String",
       },
       {
         title: "Pressure equivalent radius",
@@ -297,7 +297,7 @@ var specs = [
       {
         title: "Workover procedure on exceeding water cut",
         desc: "",
-        type: "Number",
+        type: "String",
       },
       {
         title: "End run flag",
@@ -367,7 +367,7 @@ var specs = [
         title: "Start up time",
         desc: "",
         type: "Number",
-      },   
+      },
     ]
   },
 ]
@@ -379,8 +379,16 @@ function generateTables() {
     var container = `
   <div class="_wellConfig" id="`+ cur.key + `">
     <h3>`+ cur.title + `</h3>
-    <span class="desc">`+ cur.desc + `</span><br>
-    <table class="table table-striped">
+    <div class="_controlRows">
+      <div class="btn btn-primary _addRow btn-mini">
+        Add row
+      </div>
+      <div class="btn btn-default _removeRow btn-mini">
+        Remove row
+      </div>
+      <span class="desc">`+ cur.desc + `</span><br>
+    </div>
+    <table class="table table-striped fixed" style="margin: 5px 0 0 0">
       <thead>
         <tr class="title">
         `+ getTitle(cur.body) + `
@@ -392,12 +400,6 @@ function generateTables() {
       <tbody>
       </tbody>
     </table>
-    <div class="btn btn-primary _addRow">
-      Add row
-    </div>
-    <div class="btn btn-default _removeRow">
-      Remove row
-    </div>
   </div>
   `;
     $app.append(container);
@@ -408,7 +410,7 @@ function generateTables() {
     var html = "";
     for (let t of body) {
       html += `
-        <td>`+t.title+`</td>
+        <td>`+ t.title + `</td>
       `
     }
     return html;
@@ -416,10 +418,10 @@ function generateTables() {
 
   function getDesc(body) {
     var html = "";
-    var i=1;
+    var i = 1;
     for (let t of body) {
       html += `
-        <td>`+i+") "+ t.desc+` <span class="smaller">`+t.type+`</span></td>
+        <td>`+ i + ") " + t.desc + ` <span class="smaller">` + t.type + `</span></td>
       `
       i++;
     }

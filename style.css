@@ -2,9 +2,12 @@
   font-size: 12px;
   width: 100%;
   float: left;
+  /*Setting the table width is important!*/
+  /*Hide text outside the cell.*/
+  /*Setting the width of column 3.*/
 }
 .app ._wellConfig {
-  margin: 0 0 40px 0;
+  margin: 0 0 0px 0;
 }
 .app ._wellConfig table thead tr:nth-child(1) {
   font-weight: bold;
@@ -20,4 +23,34 @@
 }
 .app ._wellConfig:nth-child(even) table {
   background-color: #f1f1f1;
+}
+.app h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+.app .title {
+  font-size: 11px;
+}
+.app .desc {
+  font-size: 11px;
+}
+.app tbody input {
+  font-size: 13px;
+}
+.app .btn-mini {
+  padding: 2px 5px;
+  font-size: 11px;
+  line-height: 1;
+  border-radius: 3px;
+}
+.app table.fixed {
+  table-layout: fixed;
+  width: 90px;
+}
+.app table.fixed td {
+  overflow: hidden;
+}
+.app table.fixed td {
+  width: 92px;
 }

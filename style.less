@@ -3,7 +3,7 @@
     width: 100%;
     float: left;
     ._wellConfig {
-      margin: 0 0 40px 0;
+        margin: 0 0 0px 0;
         table {
             thead {
                 tr:nth-child(1) {
@@ -24,6 +24,39 @@
         }
     }
     ._wellConfig:nth-child(even) table {
-      background-color: rgb(241,241,241);
-  }
+        background-color: rgb(241, 241, 241);
+    } //redesign
+    h3 {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 10px 0 5px 0;
+    }
+    .title {
+        font-size: 11px;
+    }
+    .desc {
+        font-size: 11px;
+    }
+    tbody input {
+        font-size: 13px;
+    }
+    .btn-mini {
+        padding: 2px 5px;
+        font-size: 11px;
+        line-height: 1;
+        border-radius: 3px;
+    }
+    table.fixed {
+        table-layout: fixed;
+        width: 90px;
+    }
+    /*Setting the table width is important!*/
+    table.fixed td {
+        overflow: hidden;
+    }
+    /*Hide text outside the cell.*/
+    table.fixed td {
+        width: 92px;
+    }
+    /*Setting the width of column 3.*/
 }
